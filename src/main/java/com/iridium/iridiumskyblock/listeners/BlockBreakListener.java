@@ -97,6 +97,7 @@ public class BlockBreakListener implements Listener {
                 } else {
                     island.stackedBlocks.compute(location, (loc, original) -> original - 1);
                 }
+                //This needs to be ran a tick later since blockbreakevent gets called before the block gets removed
                 Bukkit.getScheduler().runTask(IridiumSkyblock.getInstance(), () -> blockState.update(true, true));
                 island.sendHomograms();
             }
