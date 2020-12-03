@@ -6,7 +6,7 @@ api-version: '1.13'
 author: IridiumLLC
 load: STARTUP
 depend: [Vault]
-softdepend: [WorldEdit, PlaceholderAPI, MVdWPlaceholderAPI, WildStacker, EpicSpawners, UltimateStacker, MergedSpawner, Vault, Multiverse-Core, Essentials, EssentialsChat, ChatManager, DeluxeChat]
+softdepend: [RoseStacker, WorldEdit, PlaceholderAPI, MVdWPlaceholderAPI, WildStacker, EpicSpawners, UltimateStacker, MergedSpawner, Vault, Multiverse-Core, Essentials, EssentialsChat, ChatManager, DeluxeChat]
 commands:
   island:
     aliases: ["is", "IridiumSkyblock"]

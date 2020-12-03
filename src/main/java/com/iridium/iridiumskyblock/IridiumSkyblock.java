@@ -23,6 +23,7 @@ import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -555,7 +556,6 @@ public class IridiumSkyblock extends JavaPlugin {
     }
 
     public void loadManagers() {
-
         sqlManager = new SQLManager();
         sqlManager.createTables();
         if (persist.getFile("islandmanager").exists()) {
