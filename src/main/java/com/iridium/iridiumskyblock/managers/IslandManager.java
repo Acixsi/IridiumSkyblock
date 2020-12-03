@@ -223,7 +223,7 @@ public class IslandManager {
                     island.setName(island.getName().substring(0, IridiumSkyblock.getConfiguration().maxIslandName));
                 }
                 if (island.getName().length() < IridiumSkyblock.getConfiguration().minIslandName) {
-                    Player owner = Bukkit.getPlayer(UUID.fromString(island.getOwner()));
+                    OfflinePlayer owner = Bukkit.getOfflinePlayer(UUID.fromString(island.getOwner()));
                     island.setName(owner.getName());
                 }
 
@@ -253,7 +253,8 @@ public class IslandManager {
     }
 
     public static void save(Island island, boolean async) {
-        if(async) Bukkit.getScheduler().runTaskAsynchronously(IridiumSkyblock.getInstance(), () -> save(island, false));
+        if (async)
+            Bukkit.getScheduler().runTaskAsynchronously(IridiumSkyblock.getInstance(), () -> save(island, false));
         try {
             Connection connection = IridiumSkyblock.getSqlManager().getConnection();
             PreparedStatement insert = connection.prepareStatement("UPDATE islands SET json = ? WHERE id = ?;");
